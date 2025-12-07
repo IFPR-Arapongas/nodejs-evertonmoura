@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="auth-screen" class="container">
+        <h2 id="auth-title">Login</h2>
+        <input type="text" id="nome" placeholder="Seu Nome (apenas para cadastro)" class="hidden">
+        <input type="email" id="email" placeholder="Seu E-mail">
+        <input type="password" id="senha" placeholder="Sua Senha">
+
+        <button onclick="fazerLogin()" id="btn-action">Entrar</button>
+        <button class="secondary" onclick="alternarTelaAuth()" id="btn-toggle">Não tem conta? Cadastre-se</button>
+    </div>
+
+    <div id="app-screen" class="container hidden">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 id="welcome-msg">Minhas Tarefas</h3>
+            <small onclick="logout()" style="color: red; cursor: pointer;">Sair</small>
+        </div>
+
+        <div style="display: flex; gap: 5px;">
+            <input type="text" id="nova-tarefa" placeholder="Nova tarefa...">
+            <button style="width: auto;" onclick="criarTarefa()">+</button>
+        </div>
+
+        <div id="lista-tarefas" class="task-list">
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
